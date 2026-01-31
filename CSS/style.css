@@ -913,7 +913,7 @@ footer p {
 }
 
 .modern-template .resume-header {
-  background: var(--gradient-primary);
+  background: var(--gradient-blue);
   color: var(--white);
   padding: var(--space-3xl) var(--space-2xl);
   text-align: center;
