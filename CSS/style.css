@@ -359,7 +359,7 @@ a:hover {
 
 /* ================= FOOTER ================= */
 footer {
-  background: var(--dark-900);
+  background: var(--gradient-blue);
   color: var(--white);
   text-align: center;
   padding: var(--space-2xl) 0;
@@ -367,7 +367,7 @@ footer {
 }
 
 footer p {
-  color: var(--gray-400);
+  color: var(--white--600);
   margin: 0;
 }
 
