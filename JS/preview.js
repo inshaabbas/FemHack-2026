@@ -39,8 +39,6 @@ async function loadResume() {
 
 function renderResume(resume) {
     const previewDiv = document.getElementById('resume-preview');
-    
-    // Different templates
     const templates = {
         modern: renderModernTemplate,
         classic: renderClassicTemplate,
@@ -109,16 +107,13 @@ function renderModernTemplate(resume) {
 }
 
 function renderClassicTemplate(resume) {
-    // Similar structure with classic styling
-    return renderModernTemplate(resume); // Simplified for now
+    return renderModernTemplate(resume); 
 }
 
 function renderMinimalTemplate(resume) {
-    // Similar structure with minimal styling
-    return renderModernTemplate(resume); // Simplified for now
+    return renderModernTemplate(resume); 
 }
 
-// PDF Download
 document.getElementById('download-pdf').addEventListener('click', () => {
     const element = document.getElementById('resume-preview');
     const opt = {

@@ -1,5 +1,3 @@
-// js/dashboard.js
-
 import { auth, db } from './firebase-config.js';
 import { collection, query, where, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
@@ -7,7 +5,7 @@ import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/
 let currentUser = null;
 let allResumes = [];
 
-// Check authentication
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
         currentUser = user;
@@ -18,7 +16,6 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Logout
 document.getElementById('logout-btn').addEventListener('click', async () => {
     try {
         await signOut(auth);
@@ -28,7 +25,7 @@ document.getElementById('logout-btn').addEventListener('click', async () => {
     }
 });
 
-// Load resumes from Firestore
+
 async function loadResumes() {
     try {
         const q = query(collection(db, 'resumes'), where('userId', '==', currentUser.uid));
@@ -49,7 +46,6 @@ async function loadResumes() {
     }
 }
 
-// Display resumes
 function displayResumes(resumes) {
     const resumesGrid = document.getElementById('resumes-grid');
     
@@ -75,7 +71,6 @@ function displayResumes(resumes) {
     `).join('');
 }
 
-// Search functionality
 document.getElementById('search-input').addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const filtered = allResumes.filter(resume => 
@@ -86,14 +81,12 @@ document.getElementById('search-input').addEventListener('input', (e) => {
     displayResumes(filtered);
 });
 
-// Filter by template
 document.getElementById('template-filter').addEventListener('change', (e) => {
     const template = e.target.value;
     const filtered = template ? allResumes.filter(r => r.template === template) : allResumes;
     displayResumes(filtered);
 });
 
-// Global functions
 window.viewResume = function(id) {
     window.location.href = `preview-resume.html?id=${id}`;
 };
@@ -106,7 +99,7 @@ window.deleteResume = async function(id) {
     if (confirm('Are you sure you want to delete this resume?')) {
         try {
             await deleteDoc(doc(db, 'resumes', id));
-            loadResumes(); // Reload the list
+            loadResumes(); 
         } catch (error) {
             console.error('Error deleting resume:', error);
             alert('Failed to delete resume');

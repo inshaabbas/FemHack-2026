@@ -15,19 +15,18 @@ let editingResumeId = null;
 onAuthStateChanged(auth, (user) => {
   if (user) {
     currentUser = user;
-    loadResumeData(); // EDIT MODE
+    loadResumeData(); 
   } else {
     window.location.href = 'login.html';
   }
 });
 
 // ================= DYNAMIC FIELDS =================
-let educationCount = 0;  // keep numeric index for proper array storage
-let experienceCount = 0; // keep numeric index for proper array storage
+let educationCount = 0;  
+let experienceCount = 0; 
 
 window.addEducation = function () {
   // ================= CHANGE HERE =================
-  // Previously you used Date.now(), now using sequential numeric index
   const educationList = document.getElementById('education-list');
   const educationItem = document.createElement('div');
   educationItem.className = 'dynamic-item';
@@ -55,7 +54,7 @@ window.addEducation = function () {
   `;
   educationList.appendChild(educationItem);
 
-  educationCount++; // increment for next added field
+  educationCount++; 
 };
 
 window.addExperience = function () {
@@ -89,7 +88,7 @@ window.addExperience = function () {
   `;
   experienceList.appendChild(experienceItem);
 
-  experienceCount++; // increment for next added field
+  experienceCount++; 
 };
 
 window.removeItem = function (btn) {
