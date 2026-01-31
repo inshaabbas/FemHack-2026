@@ -377,7 +377,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--gradient-primary);
+  background: var(--gradient-blue);
   padding: var(--space-xl);
   position: relative;
   overflow: hidden;
