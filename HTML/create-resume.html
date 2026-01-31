@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Resume - Resume Builder</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">📄 Resume Builder</div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-outline">Back to Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="create-resume-container">
+        <div class="container">
+            <h1>Create Your Resume</h1>
+            
+            <form id="resume-form">
+                <!-- Personal Information -->
+                <section class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Job Title *</label>
+                            <input type="text" name="jobTitle" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" name="location" placeholder="City, Country">
+                    </div>
+                    <div class="form-group">
+                        <label>Profile Summary</label>
+                        <textarea name="summary" rows="4" placeholder="Brief professional summary..."></textarea>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="form-section">
+                    <h2>Education</h2>
+                    <div id="education-list"></div>
+                    <button type="button" class="btn-add" onclick="addEducation()">+ Add Education</button>
+                </section>
+
+                <!-- Work Experience -->
+                <section class="form-section">
+                    <h2>Work Experience</h2>
+                    <div id="experience-list"></div>
+                    <button type="button" class="btn-add" onclick="addExperience()">+ Add Experience</button>
+                </section>
+
+                <!-- Skills -->
+                <section class="form-section">
+                    <h2>Skills</h2>
+                    <div class="form-group">
+                        <label>Add Skills (comma separated)</label>
+                        <input type="text" name="skills" placeholder="JavaScript, React, Node.js, etc.">
+                    </div>
+                </section>
+
+                <!-- Template Selection -->
+                <section class="form-section">
+                    <h2>Select Template</h2>
+                    <div class="template-selection">
+                        <label>
+                            <input type="radio" name="template" value="modern" checked>
+                            <span>Modern</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="template" value="classic">
+                            <span>Classic</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="template" value="minimal">
+                            <span>Minimal</span>
+                        </label>
+                    </div>
+                </section>
+
+                <button type="submit" class="submit-btn">Create Resume</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/JS/resume.js"></script>
+</body>
+</html>

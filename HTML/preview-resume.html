@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Resume</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">📄 Resume Builder</div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-outline">Back to Dashboard</a>
+                <button id="download-pdf" class="btn-primary">Download PDF</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="preview-container">
+        <div id="resume-preview" class="resume-preview">
+            <!-- Resume content will be loaded here -->
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script type="module" src="/js/preview.js"></script>
+</body>
+</html>
